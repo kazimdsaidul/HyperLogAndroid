@@ -11,6 +11,8 @@ import com.hypertrack.hyperlog.HLCallback;
 import com.hypertrack.hyperlog.HyperLog;
 import com.hypertrack.hyperlog.error.HLErrorResponse;
 
+import java.util.ArrayList;
+
 public class MainActivity extends AppCompatActivity {
 
     private static final String TAG = MainActivity.class.getName();
@@ -18,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
 
     private Button btGenerator;
     private Button btSend;
+    private Button btError;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
 
         btGenerator = findViewById(R.id.btGenerator);
         btSend = findViewById(R.id.btSend);
+        btError = findViewById(R.id.btError);
 
 
         btGenerator.setOnClickListener(new View.OnClickListener() {
@@ -66,6 +70,16 @@ public class MainActivity extends AppCompatActivity {
                         Log.e(TAG, "onError: ");
                     }
                 });
+            }
+        });
+
+        btError.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Object o = new ArrayList<>().get(100);
+
+
             }
         });
 
